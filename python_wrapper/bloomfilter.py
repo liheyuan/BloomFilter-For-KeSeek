@@ -125,6 +125,7 @@ class BloomFilter(_object):
     def Dump(self, *args): return _bloomfilter.BloomFilter_Dump(self, *args)
     def Add(self, *args): return _bloomfilter.BloomFilter_Add(self, *args)
     def Test(self, *args): return _bloomfilter.BloomFilter_Test(self, *args)
+    def TestAndAdd(self, *args): return _bloomfilter.BloomFilter_TestAndAdd(self, *args)
 BloomFilter_swigregister = _bloomfilter.BloomFilter_swigregister
 BloomFilter_swigregister(BloomFilter)
 

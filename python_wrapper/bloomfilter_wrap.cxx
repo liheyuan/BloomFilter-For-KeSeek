@@ -4768,6 +4768,39 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_BloomFilter_TestAndAdd(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  BloomFilter *arg1 = (BloomFilter *) 0 ;
+  ::std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  bool result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:BloomFilter_TestAndAdd",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_BloomFilter, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "BloomFilter_TestAndAdd" "', argument " "1"" of type '" "BloomFilter *""'"); 
+  }
+  arg1 = reinterpret_cast< BloomFilter * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "BloomFilter_TestAndAdd" "', argument " "2"" of type '" "::std::string const""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  result = (bool)(arg1)->TestAndAdd(arg2);
+  resultobj = SWIG_From_bool(static_cast< bool >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *BloomFilter_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *obj;
   if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
@@ -4803,6 +4836,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"BloomFilter_Dump", _wrap_BloomFilter_Dump, METH_VARARGS, NULL},
 	 { (char *)"BloomFilter_Add", _wrap_BloomFilter_Add, METH_VARARGS, NULL},
 	 { (char *)"BloomFilter_Test", _wrap_BloomFilter_Test, METH_VARARGS, NULL},
+	 { (char *)"BloomFilter_TestAndAdd", _wrap_BloomFilter_TestAndAdd, METH_VARARGS, NULL},
 	 { (char *)"BloomFilter_swigregister", BloomFilter_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };
