@@ -27,6 +27,9 @@ public:
 	
 	//if all of the M bit was set to True -> return True;if any of the M bit was set to False -> Return False
 	bool Test(const ::std::string key);
+
+	//Test first, add it if not in and return false, else return false
+	bool TestAndAdd(const ::std::string key);
 private:
 	BV* pbv;
 };

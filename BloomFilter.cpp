@@ -65,3 +65,16 @@ bool BloomFilter::Test(const ::std::string key)
 	}
 	return true;
 }
+
+bool BloomFilter::TestAndAdd(const ::std::string key)
+{
+	if(this->Test(key))
+	{
+		return true;	
+	}
+	else
+	{
+		this->Add(key);
+		return false;
+	}
+}
